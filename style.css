@@ -1,0 +1,129 @@
+:root {
+  --fundo: #0d0d0d;
+  --cartao: #1a1a1a;
+  --texto: #f5f5f5;
+  --texto-suave: #b5b5b5;
+  --borda: #3a3a3a;
+  --destaque: #e8590c;
+  --destaque-escuro: #c2410c;
+  --erro: #ff6b6b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "Rubik", sans-serif;
+}
+
+.cartao {
+  width: 100%;
+  max-width: 560px;
+  padding: 32px;
+  background: var(--cartao);
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 2.3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.descricao {
+  margin: 0 0 24px;
+  color: var(--texto-suave);
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.linha {
+  display: flex;
+  gap: 12px;
+}
+
+input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  background: #0d0d0d;
+  color: var(--texto);
+  font: inherit;
+  font-size: 1.2rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--destaque);
+  box-shadow: 0 0 0 3px rgba(232, 89, 12, 0.35);
+}
+
+input.invalido { border-color: var(--erro); }
+
+button {
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--destaque);
+  color: #fff;
+  font: inherit;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s;
+}
+
+button:hover { background: var(--destaque-escuro); }
+button:active { transform: scale(0.99); }
+button:focus-visible { outline: 3px solid rgba(232, 89, 12, 0.6); outline-offset: 2px; }
+
+.lista {
+  margin: 24px 0 0;
+  padding-left: 28px;
+  font-size: 1.25rem;
+}
+
+.lista:empty { display: none; }
+
+.lista li {
+  margin-bottom: 8px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #0d0d0d;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s, background 0.15s;
+}
+
+.lista li::marker { color: var(--destaque); font-weight: 600; }
+.lista li:hover { background: #242424; }
+
+.lista li.concluida {
+  color: var(--texto-suave);
+  text-decoration: line-through;
+}
+
+@media (max-width: 420px) {
+  .cartao { padding: 24px 20px; }
+  h1 { font-size: 1.9rem; }
+  .linha { flex-direction: column; }
+}
