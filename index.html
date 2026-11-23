@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geomini&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            font-family: "Geomini", system-ui, sans-serif;
+            background: #eaf6f4;
+            color: #14171f;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 420px;
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px 36px;
+            box-shadow: 0 1px 2px rgba(20, 23, 31, .06), 0 12px 32px rgba(20, 23, 31, .08);
+        }
+
+        h1 { font-size: 26px; font-weight: 700; letter-spacing: -.02em; }
+
+        .subtitulo { margin: 6px 0 28px; font-size: 14px; color: #6b7280; }
+
+        .campo { margin-bottom: 18px; }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            font: inherit;
+            font-size: 15px;
+            color: inherit;
+            background: #f9fafb;
+            border: 1px solid #e0e3e8;
+            border-radius: 10px;
+            transition: border-color .15s, box-shadow .15s, background .15s;
+        }
+
+        input::placeholder { color: #a3a9b5; }
+
+        input:focus {
+            outline: none;
+            background: #fff;
+            border-color: #3fa796;
+            box-shadow: 0 0 0 4px rgba(143, 211, 200, .45);
+        }
+
+        button {
+            width: 100%;
+            margin-top: 8px;
+            padding: 14px;
+            font: inherit;
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            background: #3fa796;
+            border: 0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background .15s, transform .1s;
+        }
+
+        button:hover { background: #329181; }
+        button:active { transform: scale(.985); }
+
+        @media (max-width: 480px) {
+            .card { padding: 32px 22px; }
+        }
+    </style>
+</head>
+<body>
+    <main class="card">
+        <h1>Criar conta</h1>
+        <p class="subtitulo">Preencha os dados abaixo para se cadastrar.</p>
+
+        <form action="#" method="post">
+            <div class="campo">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+            </div>
+            <div class="campo">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="voce@email.com" required>
+            </div>
+            <div class="campo">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </main>
+</body>
+</html>
