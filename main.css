@@ -1,10 +1,30 @@
+/* Tipografia: Geomanist (coloque Geomanist-Regular.woff2 e Geomanist-Bold.woff2 em ./fonts).
+   Sem os arquivos, o navegador usa a Outfit, geométrica e parecida. */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+
+@font-face {
+    font-family: "Geomanist";
+    src: local("Geomanist"), local("Geomanist Regular"),
+         url("./fonts/Geomanist-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Geomanist";
+    src: local("Geomanist Bold"),
+         url("./fonts/Geomanist-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Geomanist", "Outfit", Arial, sans-serif;
     background-color: #f4f4f6;
     color: #222;
     line-height: 1.5;
@@ -66,6 +86,11 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 24px;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 section h2 {
