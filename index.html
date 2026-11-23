@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício HTML + JS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cartao">
+    <header>
+      <span class="selo">Exercício prático</span>
+      <h1>Comparar dois números</h1>
+      <p class="descricao">O formulário é válido quando o número B é maior que o número A.</p>
+    </header>
+
+    <form id="formulario" novalidate>
+      <div class="campos">
+        <div class="campo">
+          <label for="campoA">Campo A</label>
+          <input type="number" id="campoA" name="campoA" step="any" placeholder="0" required>
+        </div>
+        <div class="campo">
+          <label for="campoB">Campo B</label>
+          <input type="number" id="campoB" name="campoB" step="any" placeholder="0" required>
+        </div>
+      </div>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <p id="mensagem" class="mensagem" role="alert" hidden></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
